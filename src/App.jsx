@@ -50,21 +50,13 @@ function TodoList() {
               {editIndex === index ? (
                 <>
                   <input type="text" value={editedTodo} onChange={(e) => setEditedTodo(e.target.value)}/>
-                  <button className="edit-button" onClick={saveEdit}>
-                    Save
-                  </button>
-                  <button className="cancel-button" onClick={cancelEdit}>
-                    Cancel
-                  </button>
+                  <button className="edit-button" onClick={saveEdit}> Save </button>
+                  <button className="cancel-button" onClick={cancelEdit}> Cancel </button>
                 </>
               ) : (
                 <>
-                  <button className="edit-button" onClick={() => startEdit(index, todo)}>
-                    Edit
-                  </button>
-                  <button className="delete-button" onClick={() => deleteTodo(index)}>
-                    Done
-                  </button>
+                  <button className="edit-button" onClick={() => startEdit(index, todo)}> Edit </button>
+                  <button className="delete-button" onClick={() => deleteTodo(index)}> Done </button>
                 </>
               )}
             </div>
