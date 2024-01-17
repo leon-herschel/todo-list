@@ -1,0 +1,140 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #b5cee0, #787ae7);
+  margin: 0;
+  color: black;
+}
+
+.app-container {
+  width: 500px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  flex-grow: 1; 
+  overflow: auto;
+  color: black;
+}
+
+.app-name {
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  align-items: flex-start;
+}
+
+input[type="text"] {
+  width: 100%;
+  font-size: 15px;
+  max-width: 465px;
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.first-word {
+  color: #3498db; 
+}
+
+.second-word {
+  color: #b165e4; 
+}
+
+.list-container {
+  width: 100%; 
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%; 
+}
+
+.todo-item {
+  margin: 10px 0;
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-text {
+  flex-grow: 1;
+}
+
+.button-container {
+  display: flex;
+  align-items: baseline;
+}
+
+li input[type="text"] {
+  width: 285px;
+  padding: 8px 15px;
+}
+
+li button {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.add-button,
+.edit-button,
+.save-button,
+.cancel-button,
+.delete-button {
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px 15px;
+  color: #fff;
+  transition: background-color 0.4s ease;
+}
+
+.add-button:active,
+.edit-button:active,
+.save-button:active {
+  background-color: #1b416f; 
+}
+
+.delete-button:active {
+  background-color: #8e15df;
+}
+
+.cancel-button:active {
+  background-color: #3a3838;
+}
+
+.add-button {
+  background-color: #3498db;
+  width: 100%;
+}
+
+.edit-button,
+.save-button {
+  background-color: #3498db;
+}
+
+.cancel-button {
+  background-color: #686565;
+}
+
+.delete-button {
+  background-color: #b165e4;
+}
