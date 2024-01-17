@@ -78,6 +78,7 @@ ul {
 
 .list-text {
   flex-grow: 1;
+  word-wrap: break-word;
 }
 
 .button-container {

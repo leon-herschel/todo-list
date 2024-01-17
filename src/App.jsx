@@ -2,67 +2,54 @@ import './App.css'
 import { useState } from "react"
 
 function TodoList() {
-  const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState('');
-  const [editIndex, setEditIndex] = useState(null);
-  const [editedTodo, setEditedTodo] = useState('');
+  const [todos, setTodos] = useState([])
+  const [newTodo, setNewTodo] = useState('')
+  const [editIndex, setEditIndex] = useState(null)
+  const [editedTodo, setEditedTodo] = useState('')
 
   const addTodo = () => {
     if (newTodo.trim() !== '') {
-      setTodos([...todos, newTodo]);
-      setNewTodo('');
+      setTodos([...todos, newTodo])
+      setNewTodo('')
     }
   }
 
   const deleteTodo = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos.splice(index, 1);
-    setTodos(updatedTodos);
+    const updatedTodos = [...todos]
+    updatedTodos.splice(index, 1)
+    setTodos(updatedTodos)
   }
 
   const startEdit = (index, todo) => {
-    setEditIndex(index);
-    setEditedTodo(todo);
+    setEditIndex(index)
+    setEditedTodo(todo)
   }
 
   const cancelEdit = () => {
-    setEditIndex(null);
-    setEditedTodo('');
+    setEditIndex(null)
+    setEditedTodo('')
   }
 
   const saveEdit = () => {
-    const updatedTodos = [...todos];
-    updatedTodos[editIndex] = editedTodo;
-    setTodos(updatedTodos);
-    setEditIndex(null);
-    setEditedTodo('');
+    const updatedTodos = [...todos]
+    updatedTodos[editIndex] = editedTodo
+    setTodos(updatedTodos)
+    setEditIndex(null)
+    setEditedTodo('')
   }
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="What do you need to do?"
-        value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
-      />
-      <button className="add-button" onClick={addTodo}>
-        Add
-      </button>
+      <input type="text" placeholder="What do you need to do?" value={newTodo} 
+      onChange={(e) => setNewTodo(e.target.value)}/>
+      <button className="add-button" onClick={addTodo}> Add </button>
       <ul>
-        {todos.map((todo, index) => (
-          <li key={index} className="todo-item">
-            {editIndex !== index && (
-              <div className="list-text">{todo}</div>
-            )}
+        {todos.map((todo, index) => (<li key={index} className="todo-item">
+            {editIndex !== index && (<div className="list-text">{todo}</div>)}
             <div className="button-container">
               {editIndex === index ? (
                 <>
-                  <input
-                    type="text"
-                    value={editedTodo}
-                    onChange={(e) => setEditedTodo(e.target.value)}
-                  />
+                  <input type="text" value={editedTodo} onChange={(e) => setEditedTodo(e.target.value)}/>
                   <button className="edit-button" onClick={saveEdit}>
                     Save
                   </button>
@@ -85,7 +72,7 @@ function TodoList() {
         ))}
       </ul>
     </div>
-  );  
+  )
   
 }
 
